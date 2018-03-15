@@ -42,12 +42,12 @@ public:
 			}
 		}
 	}
-	void feed(vector<int>& input_layer) {
+	void feed(vector<int>& inputVec) {
 		//¼ÆËãÒþ²Ø²ã
 		for (int j = 0; j < hidden_layer.size(); j++) {
 			double t_result = 0.0;
 			for (int i = 0; i < input_layer.size(); i++) {
-				t_result += hidden_layer[j].weights[i] * input_layer[i];
+				t_result += hidden_layer[j].weights[i] * inputVec[i];
 			}
 			t_result += hidden_layer[j].bias;
 			hidden_layer[j].tValue = activateFunction(t_result);
